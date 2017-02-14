@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE= [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -113,6 +114,19 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+MAILER_EMAIL_BACKEND = EMAIL_BACKEND
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT=465
+EMAIL_HOST_USER = 'zolghadrsharare'
+EMAIL_HOST_PASSWORD = 'sharare1376'
+DEFAULT_EMAIL_FROM = 'zolghadrsharare@gmail.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+
+EMAIL_USE_SSL = True
 
 
 # Static files (CSS, JavaScript, Images)

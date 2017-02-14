@@ -1,0 +1,161 @@
+
+
+<html>
+<head>
+<style>
+body {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8XcXPbl-gcFnaPQtKKVOq6ZjX_03M49KllMl3y7L6k7yjxR_d3A");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+h1 {
+    color: BurlyWood ;
+    font-family: Georgia;
+    position: absolute;
+    left:5%;
+ }
+
+#p01{
+ 	color:#404040 ;
+    font-family:Gill Sans;
+    position: absolute;
+    left:5%;
+    top:5%;
+   
+}
+
+#p02{
+ 	color:#404040 ;
+    font-family:Gill Sans;
+    position: absolute;
+    left:5%;
+    top:15%;
+   
+}
+
+#p03{
+ 	color:#404040 ;
+    font-family:Gill Sans;
+    position: absolute;
+    left:5%;
+    top:25%;
+   
+}
+
+input[type=Email] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: Gainsboro ;
+    color:#404040  ;
+    position: absolute;
+    left:5%;
+    top:10%;
+    
+}
+
+input[type=Email]:focus {
+    background-color: BurlyWood;
+
+}    
+
+input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: Gainsboro  ;
+    color:#404040  ;
+    position: absolute;
+    left:5%;
+    top:20%;
+    
+   
+}
+
+input[type=text]:focus {
+    background-color: BurlyWood;
+
+}    
+
+input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color:Gainsboro ;
+    color: #404040  ;
+    position: absolute;
+    left:5%;
+    top:30%;
+    
+    
+}
+
+input[type=password]:focus {
+    background-color: BurlyWood;
+
+}    
+
+input[type=submit] {
+    width: 9.7%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color:Gainsboro  ;
+    color:#404040 ;
+    font-family:Gill Sans;
+    position: absolute;
+    left:5%;
+    top:37%;
+    
+   
+}
+
+input[type=reset] {
+    width: 9.8%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color:Gainsboro ;
+    color:#404040  ;
+    font-family:Gill Sans;
+    position: absolute;
+    left:15.1%;
+    top:37%;
+    
+
+   
+}  
+</style>
+</head>
+<body>
+
+<h1>Create your account!</h1>
+<div>
+<form action="{% url 'register' %}" method="post">
+{%csrf_token%}
+   <h3 id=p01>Email:</h3><br><input type="Email" name="email"><br>
+
+   <h3 id=p02>Username:</h3><br><input type="text" name="username"><br>
+
+   <h3 id=p03>Password:</h3><br><input type="password" name="password"><br>
+
+   <input type="submit" name="submit" value="Register">
+   <input type="reset" name="reset" value="clear">
+</form><br>
+</div>
+<div>
+{% if register_error %} {{register_error}} {% endif %}
+</div>
+</body>
+</html>

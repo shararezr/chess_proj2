@@ -1,0 +1,16 @@
+<h1>User added!!</h1>
+<h1>Active your account<h1/>
+<p>enter your code<p/>
+<form action="{% url 'active_page' %}" method="post">
+{%csrf_token%}
+ <input type="text" name="username" placeholder="username">
+ <input type="text" name="key" required autocomplete="on" placeholder="Active_code"><br/>
+ <input type="submit" value="log in"><br/>
+
+</form></br>
+{% if activecode_error1 %} {{activecode_error1}} {% endif %}
+{% if activecode_error2 %} {{activecode_error2}} {% endif %}
+
+
+
+

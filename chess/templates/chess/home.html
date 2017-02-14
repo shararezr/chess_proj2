@@ -1,0 +1,136 @@
+<html>
+<head>
+<style> 
+
+body {
+    background: url("http://paezhache.com/blog/wp-content/uploads/2014/07/10243-chess-pieces-1920x1080-photography-wallpaper.jpg ");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+
+h2 {
+    color:lightblue ;
+    font-family:Gill Sans;
+   
+    
+ }
+
+ h3{
+ 	color:lightblue ;
+    font-family:Gill Sans;
+    
+ }
+
+#p01{
+ 	color:BurlyWood  ;
+    font-family:Gill Sans;
+    position: absolute;
+    right:27%;
+    top:5%;
+}
+
+#p02{
+	color:BurlyWood  ;
+    font-family:Gill Sans;
+    position: absolute;
+    top:12%;
+    right:27%;
+
+}
+
+#p03{
+	color:lightblue ;
+    font-family:Gill Sans;
+    position: absolute;
+    top:26%;
+    right:12%;
+
+}
+
+#p04{
+	color:RebeccaPurple  ;
+    font-family:Gill Sans;
+    position: absolute;
+    top:26%;
+    right:7%;
+
+
+} 
+
+input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: BurlyWood;
+    color: MidnightBlue ;
+    position: absolute;
+    right:6%;
+    top:5%;
+}
+
+input[type=text]:focus {
+    background-color: lightblue;
+}
+
+input[type=password] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: BurlyWood;
+    color: MidnightBlue ;
+    position: absolute;
+    right:6%;
+    top:12%;
+   
+}
+
+input[type=password]:focus {
+    background-color: lightblue;
+}
+
+input[type=submit] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: BurlyWood;
+    color:MidnightBlue ;
+    position: absolute;
+    right:6%;
+    top:19%;
+    font-family:Gill Sans;
+    
+}
+
+
+</style>
+</head>
+<body>
+
+<h2>play chess online</h2>
+<h3>it's nice to see that you're interested in our site!!<h3/>
+<h3>enter your dtails and enjoy the game.<h3/>
+<form action="{% url 'login' %}" method="post">
+{%csrf_token%}
+  
+
+ <h4 id="p01">username <h4/>  <input type="text" name="username"><br/>
+ <h4 id="p02">Password <h4/> <input type="password" name="password"><br/>
+ <input type="submit" name="submit" value="Login">
+
+</form></br>
+
+<h4 id="p03"> Don't have an account?!<h4/>
+<a href="/chess/register_page"><h4 id="p04"> Sign up <h4/><a/>
+
+{% if error %} {{error1}} {% endif%}
+{% if error %} {{error2}} {% endif%}
+
